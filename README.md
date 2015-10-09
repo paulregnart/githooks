@@ -1,5 +1,5 @@
 # githooks
-Githooks can providearbitary checks before commiting using git.
+Githooks  provide arbitary checks before commiting using git.
 
 This hook searches the git commit log for any changes about to be committed to a given directory.
 In this example, the database folder in a rails app.
