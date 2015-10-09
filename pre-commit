@@ -1,0 +1,14 @@
+#!/bin/sh
+#  
+# A pre commit hook which informs developers making DB changes of next steps.
+
+args='(binding.pry|debugger|<<<<<<<|=======|>>>>>>>)'
+SRC_PATTERN="host_app/db"
+
+git diff --cached --name-only | grep "$SRC_PATTERN" && \
+  echo '**************************************************' && \
+  echo '**                                              **' && \
+  echo '** THERE ARE DB CHANGES. Please inform people.  **' && \
+  echo '**                                              **' && \
+  echo '**************************************************' && \
+  exit 0
